@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<title>JPFS | Japan property for sale</title>
+<meta name="keywords" content="real estate">
+<meta name="description" content="real estate">
+<meta name="robots" content="noindex,follow">
+<link rel="shortcut icon" href="../img/site/common/favicon.ico">
+<link rel="stylesheet" media="all" href="../css/reset.css">
+<link rel="stylesheet" media="all" href="../css/common.css">
+<link rel="stylesheet" media="all" href="../css/admin.css">
+<!--[if lt IE 9]>
+  <script src="../js/jquery-1.10.2.min.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+  <script src="../js/jquery-2.0.3.min.js"></script>
+<![endif]-->
+<script src="../js/modernizr.custom.min.js"></script>
+<script src="../js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../js/jquery.common.js"></script>
+<script src="../js/jquery.admin.js"></script>
+
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<!-- ●header START● -->
+<div>
+  <!-- ●logo+search START● -->
+  <div id="area_face">
+    <!-- logo -->
+    <div id="area_logo">
+      <a href="/">
+        <img src="/img/site/common/logo_reij_admin.jpg" alt="jpfs">
+      </a>
+    </div>
+  </div>
+  <!-- ●logo+search END● -->
+</div>
+<!-- ●header END● -->
+
+<!-- ●main contents(left side navi+right contents) START● -->
+<div id="area_admin_main">
+  <p class="tit_admin">admin page</p>
+  {if isset($err_msg_property_id)}<span class="red">{$err_msg_property_id}</span>{/if} 
+  <form action="." method="post" class="form_class">
+    物件種別ID search：
+    <input type="text" name="srh_property_id" size="20" maxlength="20" value="{$srh_property_id}" placeholder="Enter Distinction ID" />
+    <input type="hidden" name="srh_flg" value="1">
+    <input type="submit" value="search"><br>
+    <span class="orange size13">※数字入力のみ</span>
+  </form>
+  <hr>
+
+  {if isset($err_msg_distinction_id)}<span class="red">{$err_msg_distinction_id}</span>{/if} 
+  <form action="." method="post" class="form_class">
+    K種別ID search：
+    <input type="text" name="srh_distinction_id" size="20" maxlength="20" value="{$srh_distinction_id}" placeholder="Enter Distinction ID" />
+    <input type="hidden" name="srh_flg" value="2">
+    <input type="submit" value="search"><br>
+    <span class="orange size13">※英数字入力のみ</span>
+  </form>
+  <hr>
+
+  <form action="." method="post">
+  メンテナンス移行<br>
+    現在の状況: {$current_maintenance}<br>
+    日付
+    <select name="year">
+      <option value="2014">2014年</option>
+      <option value="2015">2015年</option>
+      <option value="2016">2016年</option>     
+    </select>
+    
+    <select name="month">
+    <script type="text/javascript">
+    for(i=1;i<10;i++) {
+    document.write("<option value=0" + i + ">" + i + "月</option>");
+    }
+    for(i=10;i<13;i++) {
+    document.write("<option value=" + i + ">" + i + "月</option>");
+    }
+    </script>
+    </select>
+
+    <select name="day">
+    <script type="text/javascript">
+    for(i=1;i<10;i++) {
+    document.write("<option value=0" + i + ">" + i + "日</option>");
+    }
+    for(i=10;i<32;i++) {
+    document.write("<option value=" + i + ">" + i + "日</option>");
+    }
+    </script>
+    </select>
+
+    <select name="hour">
+    <script type="text/javascript">
+    for(i=0;i<10;i++) {
+    document.write("<option value=0" + i + ">" + i + "時</option>");
+    }
+    for(i=10;i<24;i++) {
+    document.write("<option value=" + i + ">" + i + "時</option>");
+    }
+    </script>
+    </select>
+
+    <select name ="minute">
+    <script type="text/javascript">
+    for(i=0;i<10;i++) {
+    document.write("<option value=0" + i + ">" + i + "分</option>");
+    }
+    for(i=10;i<60;i++) {
+    document.write("<option value=" + i + ">" + i + "分</option>");
+    }
+    </script>
+    </select>
+
+    <input type="hidden" name="srh_flg" value="4">
+    <input type="submit" value="モードチェンジ"><br>
+    {if isset($maintenance_mode)}<span class="red">{$maintenance_mode}</span><br>{/if}
+    <span class="orange size13">※シンガポール時間で入力 </span>
+  </form>
+  <hr>
+
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+    CSV UPLOAD：
+    <input type="file" name="upfile" />
+    <input type="submit" value="UPLOAD" />
+  </form>
+  {$upload_msg}
+</div>
+<!-- ●main contents(left side navi+right contents) START● -->
+</body>
+</html>

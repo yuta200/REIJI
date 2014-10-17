@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+/* right contents navi start */
+#area_contents {
+  float: left;
+  width: 685px;
+}
+
+.new_properties,
+.featurec_properties {
+  margin-bottom: 20px;
+}
+
+.tit_contents {
+  background: #fff;
+  border-bottom: 1px solid #aaa;
+  height: 42px;
+  padding: 0;
+  margin-bottom: 15px;
+  width: 685px;
+}
+
+.tit_contents2 {
+  background: #fff;
+  border-bottom: 1px solid #aaa;
+  height: 44px;
+  padding: 0;
+  width: 685px;
+}
+
+.ico_triangle{
+  float: left;
+  width: 0;
+  height: 0;
+  margin:11px 0 0 15px;
+  border: 10px solid transparent;
+  border-left: 15px solid #336600;
+}
+
+.tit_contents2 h2,
+.tit_contents h2 {
+  float: left;
+  color: #336600;
+  font-size: 30px;
+  height: 30px;
+  padding: 0 0 0 0;
+}
+
+.link_property {
+  float: right;
+  color: #336600;
+  font-size: 15px;
+  height: 30px;
+  padding: 15px 15px 0 0;
+}
+
+.link_property a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #0654BA;
+}
+
+.featurec_properties_lmg {
+  vertical-align: bottom;
+}
+
+.featurec_properties_list a {
+  display:block;
+}
+
+.featurec_properties_list a {
+  display:block;
+  text-decoration: none;
+}
+
+.property_list {
+  background: #f3f3e7;
+  font-size: 14px;
+  padding-left: 10px;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 15px; 
+}
+
+.featurec_properties_list td {
+  border-left: solid 10px #fff;
+  border-right: solid 10px #fff;
+}
+
+.property_list_last {
+  background: #f3f3e7;
+  font-size: 14px;
+  padding-left: 10px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.property_list_this {
+  background: #f3f3e7;
+  font-size: 14px;
+  padding: 0 10px 5px 0;
+  text-align: right;
+  height: 20px;
+  line-height: 20px;
+}
+
+.property_list a{
+  border-bottom: dotted 1px #7f8c8d;
+  width: 140px;
+  height: 29px;
+}
+
+.property_list_last a,
+.property_list a{
+  color: #444;
+}
+
+.new_properties_list table {
+  width: 685px;
+}
+
+.new_properties_list a {
+  display: block;
+}
+
+.new_properties_list_tr {
+  background: #fefce4;
+}
+
+.new_properties_list_td1 {
+  border-bottom: 1px #aaa dotted;
+}
+
+.new_properties_list_td1 a {
+  color: #444;
+}
+
+.new_properties_list_td2 {
+  text-align: left;
+  font-size: 18px;
+  width: 435px;
+}
+
+.new_properties_list_td3 {
+  width: 130px;
+}
+
+.new_properties_list_td4 {
+  width: 100px;
+}
+
+.new_properties_list_td1 a:hover,
+.new_properties_list_td3 a:hover,
+.new_properties_list_td4 a:hover {
+  text-decoration: none;
+}
+
+.new_properties_list td {
+  border-left: 0px;
+  border-right: 0px;
+  vertical-align: middle;
+  padding: 10px 10px 4px 10px;
+}
+/* right contents navi end */

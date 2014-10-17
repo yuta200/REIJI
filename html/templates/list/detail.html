@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<title>JPFS | Japan property for sale</title>
+<meta name="keywords" content="real estate">
+<meta name="description" content="real estate">
+<link rel="shortcut icon" href="../img/site/common/favicon.ico">
+<link rel="stylesheet" media="all" href="../css/reset.css">
+<link rel="stylesheet" media="all" href="../css/common.css">
+<link rel="stylesheet" media="all" href="../css/list.css">
+<!--[if lt IE 9]>
+  <script src="../js/jquery-1.10.2.min.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+  <script src="../js/jquery-2.0.3.min.js"></script>
+<![endif]-->
+<script src="../js/modernizr.custom.min.js"></script>
+<script src="../js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../js/jquery.common.js"></script>
+<script src="../js/jquery.list.js"></script>
+
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+{include file='header.html'}
+
+<!-- ●main contents START● -->
+<div id="area_main">
+  <div class="area_srh_detail">
+    <div class="ico_triangle"></div>
+    <div class="tit_srh_detail">
+      Details
+    </div>
+    <br class="clearfloat">
+  </div>
+
+  <div id="property_detail">
+    <table class="property_detail">
+      <tr>
+        <td class="property_detail_td1" colspan="2">Investment condominiums
+        <!--【TODO】管理モードでアクセスした場合のみ物件種別IDを閲覧可能にする -->
+        </td>
+        <td class="property_detail_td1" colspan="2"></td>
+      </tr>
+      <tr>
+        <td class="property_detail_td2">Property ID</td>
+        <td class="property_detail_td3">{$property.id}</td>
+        <td class="property_detail_td2">Gross Yield</td>
+        <td class="property_detail_td3"><span class="yield big">{$property.yield}</span> %</td>
+      </tr>
+      <tr>
+        <td class="property_detail_td2">Price</td>
+        <td class="property_detail_td3">
+          <span class="price big">¥{$property.price}</span> 
+          <span class="big gray">( S${$price_sgd}))</span>
+          <!-- ドル換算の算出方法はGoolgeのAPIを使用する -->
+        </td>
+        <td class="property_detail_td2">Annual income/<br>Monthly income at full occupancy</td>
+        <td class="property_detail_td3">
+          ¥{$property.annual_income}<span class="gray"> ( S$ {$annual_income_sgd} )</span><br>
+          ¥{$property.monthly_income}<span class="gray"> ( S$ {$monthly_income_sgd} )</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="property_detail_td2">管理費<br>修繕積立</td>
+        <td class="property_detail_td3">
+          ¥{$property.management_fee}<span class="gray"> ( S$ {$management_fee_sgd} )</span><br>
+          ¥{$property.maintenance_fee}<span class="gray"> ( S$ ¥{$maintenance_fee_sgd} )</span>
+        </td>
+        <td class="property_detail_td2">Exclusive area</td>
+        <td class="property_detail_td3">\{$psf}(S$ \{$psf_sgd}) psf <br> {$property.footprint_sqft} sqft ({$property.footprint_sqm} sqm)<br>(バルコニー {$property.balcony_sqft}sqft)</td>
+      </tr>
+      <tr>
+        <td class="property_detail_td2">Built</td>
+        <td class="property_detail_td3">{$property.built_date} （in {$built_year}）</td>
+        <td class="property_detail_td2">Structure</td>
+        <td class="property_detail_td3">{$property.building_structure_flg}</td>
+      </tr>
+      <tr>
+        <td class="property_detail_td2">Nearest station</td>
+        <td class="property_detail_td3">{$property.access}</td>
+        <td class="property_detail_td2">階数 / 総戸数</td>
+        <td class="property_detail_td3">{$property.rank}階建 / 総戸数{$property.total_units}</td>
+      </tr>
+      <tr>
+        <td class="property_detail_td2">Location</td>
+        <td class="property_detail_td3">{$property.address}</td>
+        <td class="property_detail_td2">Layout/Floor plan</td>
+        <td class="property_detail_td3">{$property.plan}</td>
+      </tr>
+      <tr>
+        <td class="property_detail_td2">Actual use of land</td>
+        <td class="property_detail_td3">{$property.current_state_flg}</td>
+        <td class="property_detail_td2">Contract types</td>
+        <td class="property_detail_td3">{$property.management_flg}</td>
+      </tr>
+      <tr>
+        <td class="property_detail_td2_last">Handover date</td>
+        <td class="property_detail_td3_last">{$property.delivery_time_flg}</td>
+        <td class="property_detail_td2_last">Contact</td>
+        <td class="property_detail_td3_last"><a href="contact.php">この物件のお問い合わせはこちらへ</a></td>
+      </tr>
+    </table>
+
+    <!-- 物件画像 -->
+    <table>
+      <tr>
+        <td class="property_detail_img_td1">Pictures/Images of buildings&nbsp;&nbsp;&nbsp;&nbsp;<span class="maisu">{count($img)}copies</span></td>
+      </tr>
+      {for $i=0 to count($img) - 1}
+        <tr>
+          <td class="property_detail_img_td2">
+            <img src="{$img[$i]}">
+          </td>
+        </tr>
+      {/for}      
+    </table>
+
+    <p class="btn_contact"><a href="contact.php">Contact</a></p>
+  </div>
+
+  <div class="area_srh_detail">
+    <div class="ico_triangle"></div>
+    <div class="tit_srh_detail">
+      この物件と似た条件の物件
+    </div>
+    <br class="clearfloat">
+  </div>
+
+  <div id="area_list2">
+    <!-- 物件種別によって項目が変わるので、その都度変更する -->
+    <table class="area_list_table">
+      <tr>
+        <td class="area_list_td">Number of images</td>
+        <td class="area_list_td">Image</td>
+        <td class="area_list_td">
+          Category<br>
+          Location / Nearest station
+        </td>
+        <td class="area_list_td">
+          Price<br>
+          Gross Yield
+        </td>
+        <td class="area_list_td">
+          Built<br>
+          Structure
+        </td>
+        <td class="area_list_td">
+          Use district<br>
+          Building coverage ratio/Floor space index
+        </td>
+        <td class="area_list_td">
+          階数<br>
+          総戸数
+        </td>
+      </tr>
+      <tr>
+        <td class="area_list_td1"><span class="size18">{count($img0)}</span></td>
+        <td class="area_list_td1 area_list_td_img">
+          <a href="detail.php?id={$distinction_id[0]}"><img src="{$img0[0]}" alt="jpfs" width="193" height="130"></a>
+        </td>
+        <td class="area_list_td1">
+          <a href="detail.php?id={$distinction_id[0]}"><span class="size15">{$property_flg[0]}<br>
+          {$address[0]}<br>
+          {$access[0]}</span></a>
+        </td>
+        <td class="area_list_td1">
+          <span class="big red size18">\{$price[0]}</span><br>
+          {$yield[0]}％
+        </td>
+        <td class="area_list_td1">
+          <span class="big">{$built_date[0]}</span><br>
+          {$building_structure_flg[0]}
+        </td>
+        <td class="area_list_td1">
+          {$use_districts[0]}<br>
+          {$building_to_land_ratio[0]} ％ / {$floor_area_ratio[0]} ％
+        </td>
+        <td class="area_list_td1_last">
+          {$rank[0]}階建<br>
+          {$total_units[0]}戸
+        </td>
+      </tr>
+      <tr>
+        <td class="area_list_td2"><span class="size18">{count($img1)}</span></td>
+        <td class="area_list_td2 area_list_td_img">
+          <a href="detail.php?id={$distinction_id[1]}"><img src="{$img1[0]}" alt="jpfs" width="193" height="130"></a>
+        </td>
+        <td class="area_list_td2">
+          <a href="detail.php?id={$distinction_id[1]}"><span class="size15">{$property_flg[1]}<br>
+          {$address[1]}<br>
+          {$access[1]}</span></a>
+        </td>
+        <td class="area_list_td2">
+          <span class="big red size18">\{$price[1]}</span><br>
+          {$yield[1]}％
+        </td>
+        <td class="area_list_td2">
+          <span class="big">{$built_date[1]}</span><br>
+          {$building_structure_flg[1]}
+        </td>
+        <td class="area_list_td2">
+          {$use_districts[1]}<br>
+          {$building_to_land_ratio[1]} ％ / {$floor_area_ratio[1]} ％
+        </td>
+        <td class="area_list_td2_last">
+          {$rank[1]}階建<br>
+          {$total_units[1]}戸
+        </td>
+      </tr>
+      <tr>
+        <td class="area_list_td1"><span class="size18">{count($img2)}</span></td>
+        <td class="area_list_td1 area_list_td_img">
+          <a href="detail.php?id={$distinction_id[2]}"><img src="{$img2[0]}" alt="jpfs" width="193" height="130"></a>
+        </td>
+        <td class="area_list_td1">
+          <a href="detail.php?id={$distinction_id[2]}"><span class="size15">{$property_flg[2]}<br>
+          {$address[2]}<br>
+          {$access[2]}</span></a>
+        </td>
+        <td class="area_list_td1">
+          <span class="big red size18">\{$price[2]}</span><br>
+          {$yield[2]}％
+        </td>
+        <td class="area_list_td1">
+          <span class="big">{$built_date[2]}</span><br>
+          {$building_structure_flg[2]}
+        </td>
+        <td class="area_list_td1">
+          {$use_districts[2]}<br>
+          {$building_to_land_ratio[2]} ％ / {$floor_area_ratio[1]} ％
+        </td>
+        <td class="area_list_td1_last">
+          {$rank[2]}階建<br>
+          {$total_units[2]}戸
+        </td>
+      </tr>
+      <tr>
+        <td class="area_list_td2"><span class="size18">{count($img3)}</span></td>
+        <td class="area_list_td2 area_list_td_img">
+          <a href="detail.php?id={$distinction_id[3]}"><img src="{$img3[0]}" alt="jpfs" width="193" height="130"></a>
+        </td>
+        <td class="area_list_td2">
+          <a href="detail.php?id={$distinction_id[3]}"><span class="size15">{$property_flg[3]}<br>
+          {$address[3]}<br>
+          {$access[3]}</span></a>
+        </td>
+        <td class="area_list_td2">
+          <span class="big red size18">\{$price[3]}</span><br>
+          {$yield[3]}％
+        </td>
+        <td class="area_list_td2">
+          <span class="big">{$built_date[3]}</span><br>
+          {$building_structure_flg[3]}
+        </td>
+        <td class="area_list_td2">
+          {$use_districts[3]}<br>
+          {$building_to_land_ratio[3]} ％ / {$floor_area_ratio[3]} ％
+        </td>
+        <td class="area_list_td2_last">
+          {$rank[3]}階建<br>
+          {$total_units[3]}戸
+        </td>
+      </tr>
+      <tr>
+        <td class="area_list_td1"><span class="size18">{count($img4)}</span></td>
+        <td class="area_list_td1 area_list_td_img">
+          <a href="detail.php?id={$distinction_id[4]}"><img src="{$img4[0]}" alt="jpfs" width="193" height="130"></a>
+        </td>
+        <td class="area_list_td1">
+          <a href="detail.php?id={$distinction_id[4]}"><span class="size15">{$property_flg[4]}<br>
+          {$address[4]}<br>
+          {$access[4]}</span></a>
+        </td>
+        <td class="area_list_td1">
+          <span class="big red size18">\{$price[4]}</span><br>
+          {$yield[4]}％
+        </td>
+        <td class="area_list_td1">
+          <span class="big">{$built_date[4]}</span><br>
+          {$building_structure_flg[4]}
+        </td>
+        <td class="area_list_td1">
+          {$use_districts[4]}<br>
+          {$building_to_land_ratio[4]} ％ / {$floor_area_ratio[4]} ％
+        </td>
+        <td class="area_list_td1_last">
+          {$rank[4]}階建<br>
+          {$total_units[4]}戸
+        </td>
+      </tr>
+      <tr>
+        <td class="area_list_td2"><span class="size18">{count($img5)}</span></td>
+        <td class="area_list_td2 area_list_td_img">
+          <a href="detail.php?id={$distinction_id[5]}"><img src="{$img5[0]}" alt="jpfs" width="193" height="130"></a>
+        </td>
+        <td class="area_list_td2">
+          <a href="detail.php?id={$distinction_id[5]}"><span class="size15">{$property_flg[5]}<br>
+          {$address[5]}<br>
+          {$access[5]}</span></a>
+        </td>
+        <td class="area_list_td2">
+          <span class="big red size18">\{$price[5]}</span><br>
+          {$yield[5]}％
+        </td>
+        <td class="area_list_td2">
+          <span class="big">{$built_date[5]}</span><br>
+          {$building_structure_flg[5]}
+        </td>
+        <td class="area_list_td2">
+          {$use_districts[5]}<br>
+          {$building_to_land_ratio[5]} ％ / {$floor_area_ratio[5]} ％
+        </td>
+        <td class="area_list_td2_last">
+          {$rank[5]}階建<br>
+          {$total_units[5]}戸
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+<!-- ●main contents END● -->
+
+{include file='footer.html'}
+</body>
+</html>

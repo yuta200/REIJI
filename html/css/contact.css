@@ -1,0 +1,223 @@
+@charset "utf-8";
+
+/******** main contents START ********/
+/*---- index.html start ----*/
+/* contact title start */
+.area_contact {
+  border-bottom: 1px solid #aaa;
+  height: 42px;
+  padding: 0;
+  width: 1000px;
+}
+
+.area_contact .ico_triangle{
+  float: left;
+  width: 0;
+  height: 0;
+  margin:11px 0 0 15px;
+  border: 10px solid transparent;
+  border-left: 15px solid #336600;
+}
+
+.area_contact .tit_contact {
+  float: left;
+  color: #336600;
+  font-size: 30px;
+  height: 30px;
+  padding: 0 0 0 0;
+}
+/* contact title end */
+
+/* contact form start */
+#detail {
+  overflow: hidden;
+  background: #f7f7f7;
+  width: 1000px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.tel_table,
+.mail_table {
+  float: left;
+}
+
+.tel_table {
+  margin-right: 20px;
+}
+
+.area_contact_tel1 {
+  background: #fff;
+  width: 300px;
+  padding: 15px;
+}
+
+.area_contact_list1 {
+  background: #a7987b;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px 0 0 10px;
+  vertical-align: top;
+  width: 170px;
+  border-bottom: dotted 1px #fff;
+}
+
+.area_contact_list2 {
+  background: #fff;
+  font-size: 15px;
+  padding: 10px 10px 10px 15px;
+  vertical-align: top;
+  width: 405px;
+  border-bottom: dotted 1px #aaa;
+}
+
+.area_contact_list_text1 {
+  background: #FFFDF4;
+  border: 2px solid #D2BA85;
+  border-radius: 5px;
+  color: #0C2245;
+  font-size: 15px;
+  height: 33px;
+  line-height: 30px;
+  text-align: left;
+  text-indent: 5px;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.area_contact_list1 .need {
+  color: #fcf1f1;
+  font-size: 20px;
+}
+
+.area_contact_list_text2 {
+  background: #FFFDF4;
+  border: 2px solid #D2BA85;
+  border-radius: 5px;
+  color: #0C2245;
+  font-size: 15px;
+  height: 33px;
+  line-height: 30px;
+  text-align: left;
+  text-indent: 5px;
+  vertical-align: middle;
+  width: 350px;
+}
+
+.area_contact_list_text3 {
+  background: #FFFDF4;
+  border: 2px solid #D2BA85;
+  border-radius: 5px;
+  color: #0C2245;
+  font-size: 15px;
+  height: 33px;
+  line-height: 30px;
+  text-align: left;
+  text-indent: 5px;
+  vertical-align: middle;
+  width: 350px;
+}
+
+.area_contact_list_text4 {
+  background: #FFFDF4;
+  border: 2px solid #D2BA85;
+  border-radius: 5px;
+  color: #0C2245;
+  margin-top: 10px;
+  font-size: 15px;
+  height: 33px;
+  line-height: 30px;
+  text-align: left;
+  text-indent: 5px;
+  vertical-align: middle;
+  width: 350px;
+}
+
+.area_contact_list_textarea {
+  background: #FFFDF4;
+  border: 2px solid #D2BA85;
+  border-radius: 5px;
+  color: #0C2245;
+  font-size: 15px;
+  height: 150px;
+  line-height: 30px;
+  text-align: left;
+  text-indent: 5px;
+  vertical-align: middle;
+  width: 350px;
+}
+
+
+.btn_contact_next {
+  margin: 30px 0 20px 0;
+  text-align: center;
+}
+
+.btn_contact_next a{
+  width:200px;
+  height: 20px;
+  font-size: 16px;
+  padding: 10px 16px 10px 16px;
+  background:#3498db;
+  color:#ffffff;
+  text-align:center;
+  display:block;
+  text-decoration:none;
+}
+
+.btn_contact_next a:hover{
+  text-decoration:none; 
+  background:#1980b9;
+  color:#ffffff;
+}
+
+.btn_contact_next a{
+  margin:0 0 5px 0;
+  display:inline-block;
+  border-radius: 5px;
+  box-shadow:0 5px #1980b9;
+  border-bottom:1px solid #1980b9;
+}
+
+.btn_contact_next a:hover{
+  margin:5px 0 0 0;
+  box-shadow:none;
+}
+
+.radio_input {
+  display:none;
+}
+
+.radio_label1 {
+  background:url(../img/site/common/ico_radio_off.gif) no-repeat 0 center;
+  margin-right:20px;
+  padding:3px 0 3px 25px;
+  display:inline-block;
+}
+
+.radio_label_default1 {
+  background:url(../img/site/common/ico_radio_on.gif) no-repeat 0 center;
+  margin-right:20px;
+  padding:3px 0 3px 25px;
+  display:inline-block;
+}
+
+.radio_label_selected1 {
+  background:url(../img/site/common/ico_radio_on.gif) no-repeat 0 center;
+}
+
+
+#map { height: 100% }
+    
+/* contact form end */
+/*---- index.html start ----*/
+
+/*---- send.html start ----*/
+.area_send_ok {
+  background: #fff;
+  width: 930px;
+  padding: 15px;
+
+}
+/*---- send.html end ----*/
+/******** main contents END ********/
